@@ -18,4 +18,13 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     
+    
+    <color name="color_swipe_1">#FF0000</color>
+    <color name="color_swipe_2">#bfff00</color>
+    <color name="color_swipe_3">#ff6f00</color>
+    <color name="color_swipe_4">#0033ff</color>
+
+
+    <color name="color_swipe_background">#eaeaea</color>
+    
 </resources>

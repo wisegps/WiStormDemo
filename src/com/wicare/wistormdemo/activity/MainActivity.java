@@ -62,6 +62,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnAccount;// 我的帐号
 	private Button btnCards;// 卡片管理
 	private Button btnProView;//圆形弧形进度UI
+	private Button btnListview;//上下拉刷新
+	
+	
 
 	final String itemsDialog[] = { "张三", "李四", "王五" };
 
@@ -151,6 +154,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		btnProView = (Button) findViewById(R.id.btn_progress_view);
 		btnProView.setOnClickListener(this);
+		
+		
+		btnListview = (Button) findViewById(R.id.btn_listview);
+		btnListview.setOnClickListener(this);
 	}
 
 	@Override
@@ -375,6 +382,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent intentProView = new Intent(MainActivity.this,
 					ProgressViewActivity.class);
 			startActivity(intentProView);
+			break;
+			
+		case R.id.btn_listview:
+			Intent intent_listview = new Intent(MainActivity.this,
+					SwipeRefreshLayoutActivity.class);
+			startActivity(intent_listview);
 			break;
 
 		default:
