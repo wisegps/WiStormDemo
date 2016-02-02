@@ -1,0 +1,62 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    
+    <style name="anim_menu_bottom_bar">
+        <item name="android:windowEnterAnimation">@anim/menu_bottom_in</item> 
+        <item name="android:windowExitAnimation">@anim/menu_bottom_out</item>  
+     </style>
+
+    <style name="anim_menu_rigth_to_left_bar">
+        <item name="android:windowEnterAnimation">@anim/menu_left_to_right_in</item> 
+        <item name="android:windowExitAnimation">@anim/menu_left_to_right_out</item>  
+     </style>
+     
+      <!-- 卡片布局统一样式 -->
+    <style name="home_card_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- 卡片布局标题样式   周边等 -->
+    <style name="home_card_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:alpha">0.8</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+    </style>
+
+    <!-- 卡片布局 下拉箭头 -->
+    <style name="home_card_img_down_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:src">@drawable/ico_down</item>
+    </style>
+    
+    
+    
+</resources>

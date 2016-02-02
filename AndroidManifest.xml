@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wicare.wistormdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="20" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.wicare.wistormdemo" />
+
+    <!-- 百度鹰眼sdk -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 允许程序连接到已配对的蓝牙设备 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- 允许程序发现和配对蓝牙设备 -->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 允许应用读取低级别的系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- 允许访问振动设备 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 屏幕保持唤醒 不锁屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 允许应用程序更改主屏幕中的设置和快捷方式 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- *************** begin  jpush 权限  使用jpush ,需添加下面权限，com.wicare.wistormdemo 改为当前包名********************************* -->
+    <!-- Required -->
+    <permission
+        android:name="com.wicare.wistormdemo.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <!-- Required -->
+    <uses-permission android:name="com.wicare.wistormdemo.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- ****************over jpush 权限 ** -->
+
+
+    <!-- 二维码权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+
+        <!-- 调试版本 ：WU：X8r3it5InGUSwGObVTUBceyf -->
+        <!-- 正式版本 ：C：dM28kPyWksmBwkUK3PT1aMTq -->
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="X8r3it5InGUSwGObVTUBceyf" />
+
+        <activity
+            android:name="com.wicare.wistormdemo.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- <activity android:name="com.wicare.wistorm.ui.SearchBar"></activity> -->
+        <!-- listview -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.ListViewTest"
+            android:label="ListView" >
+        </activity>
+        
+        <!-- 搜索框 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.SearchBarTest"
+            android:label="SearchBar" >
+        </activity>
+        
+        <!-- 登陆 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.LoginTest"
+            android:label="Login" >
+        </activity>
+        
+        <!-- 导航栏-->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.TabBarTest"
+            android:label="TabBar" >
+        </activity>
+        
+        <!-- 地图 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.MapActivity"
+            android:label="MapActivity" >
+        </activity>
+        
+        <!-- 城市选择 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.SwitchCityTest"
+            android:label="SwitchCity" >
+        </activity>
+        
+        <!-- 跳转到框架的城市选择 -->
+        <activity
+            android:name="com.wicare.wistorm.toolkit.WCitySelector"
+            android:label="CitySelector" >
+        </activity>
+        <activity
+            android:name="com.wicare.wistormdemo.activity.JpushActivity"
+            android:label="JpushActivity" >
+        </activity>
+        <activity
+            android:name="com.wicare.wistormdemo.activity.DBActivity"
+            android:label="DBActivity" >
+        </activity>
+        <activity android:name="com.wicare.wistormdemo.activity.ShareActivity" >
+        </activity>
+
+        <!-- 侧滑菜单 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.SlidingMenuTest"
+            android:label="SlidingMenu" >
+        </activity>
+        
+        <!-- sms -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.WSMS"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- sharesdk 添加activity信息 -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 调用新浪原生SDK，需要注册的回调activity -->
+        <activity
+            android:name="cn.sharesdk.sina.weibo.SinaActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- sharesdk 添加activity信息 -->
+
+
+        <!-- 二维码 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.ZxingActivityTest"
+            android:label="Zxing" >
+        </activity>
+        <activity
+            android:name="com.wicare.wistorm.toolkit.WZxingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+
+        <!-- 输入框 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.InputFeildActivity"
+            android:label="InputFeildActivity" >
+        </activity>
+
+        <!-- 汽车选择 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.CarSelectorActivity"
+            android:label="CarSelector" >
+        </activity>
+        <activity
+            android:name="com.wicare.wistorm.toolkit.WCarBrandSelector"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+
+        <!-- 阿里云 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.WCloudActivity"
+            android:label="WCloudActivity" >
+        </activity>
+        <!-- 图片缓存 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.WCacheActivity"
+            android:label="WCacheActivity" >
+        </activity>
+
+        <!-- navigation -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.NavigationBarTest"
+            android:label="NavigationBar" >
+        </activity>
+
+        <!-- 水平进度条 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.HorizontalProgressbarTest"
+            android:label="Progressbar" >
+        </activity>
+
+        <!-- 统计图表 -->
+        <activity
+            android:name="com.wicare.wistormdemo.activity.ChartTest"
+            android:label="Charts" >
+        </activity>
+
+        <!-- 关于 -->
+        <activity android:name="com.wicare.wistormdemo.activity.AboutApp" >
+        </activity>
+        
+        <!-- 我的帐号信息 -->
+        <activity android:name="com.wicare.wistormdemo.activity.AccountActivityTest"></activity>
+        <activity android:name="com.wicare.wistorm.toolkit.WNameChangeActivity"></activity>
+        <activity android:name="com.wicare.wistorm.toolkit.WChangeEmailPhoneActivity"></activity>
+        <activity android:name="com.wicare.wistorm.toolkit.WCheckEmailPhoneActivity"></activity>
+        <activity android:name="com.wicare.wistorm.toolkit.WUpdatePwdActivity"></activity>
+          <!-- 卡片管理 -->
+        <activity android:name="com.wicare.wistormdemo.activity.CardManageActivity"></activity>
+        
+        <!-- 圆形弧形进度UI -->
+        <activity android:name="com.wicare.wistormdemo.activity.ProgressViewActivity"></activity>
+
+        <!-- *********************jpush begin ********************* -->
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <!--
+         <service
+             android:name="cn.jpush.android.service.DaemonService"
+             android:enabled="true"
+             android:exported="true">
+             <intent-filter >
+                 <action android:name="cn.jpush.android.intent.DaemonService" />
+                 <category android:name="com.wicare.wistorm"/>
+             </intent-filter>
+         </service>
+        -->
+
+
+        <!-- Required -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true" >
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
+
+                <category android:name="com.wicare.wistormdemo" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.wicare.wistormdemo" />
+            </intent-filter>
+        </activity>
+
+        <!-- Required -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- Required SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <!-- Required SDK核心功能 -->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" />
+
+        <!-- User defined. 用户自定义的广播接收器 -->
+        <receiver
+            android:name="com.wicare.wistormdemo.activity.MJpushReceiver"
+            android:enabled="true" >
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.wicare.wistormdemo" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required. For publish channel feature -->
+        <!-- JPUSH_CHANNEL 是为了方便开发者统计APK分发渠道。 -->
+        <!-- 例如: -->
+        <!-- 发到 Google Play 的APK可以设置为 google-play; -->
+        <!-- 发到其他市场的 APK 可以设置为 xxx-market。 -->
+        <!-- 目前这个渠道统计功能的报表还未开放。 -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <!-- Required. AppKey copied from Portal -->
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="246cfe991619a148bf61fdf1" />
+
+        <!-- *********************jpush over********************* -->
+    </application>
+
+</manifest>
