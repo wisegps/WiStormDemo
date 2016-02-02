@@ -85,7 +85,7 @@ public class SwipeRefreshLayoutActivity extends Activity implements OnRefreshLis
 				mData.add("SwipeRefreshLayout下拉刷新："  + num);
 				num++;
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(4000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -100,7 +100,7 @@ public class SwipeRefreshLayoutActivity extends Activity implements OnRefreshLis
 	 * 初始化数据
 	 */
 	private void initData(){
-		for(num=0;num<10;num++){
+		for(num=0;num<6;num++){
 			mData.add("SwipeRefreshLayout下拉刷新：" + num);
 		}
 	}
