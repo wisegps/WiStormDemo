@@ -16,7 +16,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 /**
- * @author wu
+ * @author Wu
+ * 
+ * SwipeRefreshLayout 用的是新的v4包，如果在和你的项目中的v4包冲突时，
+ * 删掉你项目中的v4包，用wistorm中的v4包
  * 
  * SwipeRefreshLayout 下拉刷新
  *
