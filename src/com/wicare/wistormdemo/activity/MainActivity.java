@@ -22,6 +22,7 @@ import com.wicare.wistorm.ui.WDateSelector;
 import com.wicare.wistorm.ui.WDateSelector.OnDateChangedListener;
 import com.wicare.wistorm.ui.WDialog;
 import com.wicare.wistorm.ui.WDialog.Builder;
+import com.wicare.wistorm.ui.WDialog.DialogListOnclickListener;
 import com.wicare.wistorm.ui.WLoading;
 import com.wicare.wistorm.ui.WTimeSelector;
 import com.wicare.wistorm.ui.WTimeSelector.OnTimeChangedListener;
@@ -213,13 +214,15 @@ public class MainActivity extends Activity implements OnClickListener {
 					switch (index) {
 					case 0:
 						popView.dismiss();
+						Toast.makeText(MainActivity.this, "点击了按键一", Toast.LENGTH_SHORT).show();
 						break;
-
 					case 1:
 						popView.dismiss();
+						Toast.makeText(MainActivity.this, "点击了按键二", Toast.LENGTH_SHORT).show();
 						break;
 					case 2:
 						popView.dismiss();
+						Toast.makeText(MainActivity.this, "点击了按键三", Toast.LENGTH_SHORT).show();
 						break;
 					}
 				}
@@ -250,7 +253,16 @@ public class MainActivity extends Activity implements OnClickListener {
 							dialog.dismiss();
 						}
 					});
-			builder.setOnClickListener(listViewOnClickListener);// 设置列表菜单点击事件监听
+			builder.setOnClickListener(new DialogListOnclickListener() {
+				
+				@Override
+				public void onDialogListOnClick(WDialog dialog, int position) {
+					// TODO Auto-generated method stub
+					dialog.dismiss();
+					Toast.makeText(MainActivity.this, itemsDialog[position],
+							Toast.LENGTH_SHORT).show();
+				}
+			} );// 设置列表菜单点击事件监听
 			builder.create().show();
 			break;
 
