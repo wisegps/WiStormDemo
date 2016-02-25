@@ -426,7 +426,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	 */
 	private void startProgressDialog() {
 		if (mWLoading == null) {
-			mWLoading = WLoading.createDialog(this);
+//			type 可以选择WLoading.LARGE_TYPE / WLoading.SMALL_TYPE;
+			mWLoading = WLoading.createDialog(this,WLoading.LARGE_TYPE);
 			mWLoading.setMessage("加载中...");
 		}
 		mWLoading.show();
