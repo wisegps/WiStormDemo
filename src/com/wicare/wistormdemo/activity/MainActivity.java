@@ -1,6 +1,8 @@
 package com.wicare.wistormdemo.activity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -8,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,14 +19,13 @@ import android.widget.Toast;
 
 import com.wicare.wistorm.ui.WBottomPopupWindow;
 import com.wicare.wistorm.ui.WBottomPopupWindow.OnItemClickListener;
-import com.wicare.wistorm.ui.WDateSelector;
-import com.wicare.wistorm.ui.WDateSelector.OnDateChangedListener;
 import com.wicare.wistorm.ui.WDialog;
 import com.wicare.wistorm.ui.WDialog.Builder;
 import com.wicare.wistorm.ui.WDialog.DialogListOnclickListener;
 import com.wicare.wistorm.ui.WLoading;
-import com.wicare.wistorm.ui.WTimeSelector;
-import com.wicare.wistorm.ui.WTimeSelector.OnTimeChangedListener;
+import com.wicare.wistorm.ui.pickerview.TimePopupWindow;
+import com.wicare.wistorm.ui.pickerview.TimePopupWindow.OnTimeSelectListener;
+import com.wicare.wistorm.ui.pickerview.TimePopupWindow.Type;
 import com.wicare.wistormdemo.R;
 
 /**
@@ -71,11 +71,34 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	WBottomPopupWindow mPoppupWindow;
 	private WLoading mWLoading = null;
+	
+	TimePopupWindow pwTime;
+	TimePopupWindow pwDate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		pwDate = new TimePopupWindow(MainActivity.this, Type.YEAR_MONTH_DAY);
+		pwDate.setOnTimeSelectListener(new OnTimeSelectListener() {
+			
+			@Override
+			public void onTimeSelect(Date date) {
+				// TODO Auto-generated method stub
+				btnDateSelect.setText(getDate(date));
+			}
+		});
+		
+		pwTime = new TimePopupWindow(MainActivity.this, Type.HOURS_MINS);
+		pwTime.setOnTimeSelectListener(new OnTimeSelectListener() {
+			
+			@Override
+			public void onTimeSelect(Date date) {
+				// TODO Auto-generated method stub
+				btnTimeSelect.setText(getTime(date));
+			}
+		});
 
 		btnDateSelect = (Button) findViewById(R.id.btn_date_select);
 		btnDateSelect.setOnClickListener(this);
@@ -165,31 +188,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_date_select:// 日期选择
-			WDateSelector mDateSelector = new WDateSelector(this);
-
-			mDateSelector.setDate();
-			mDateSelector.setOnDateChangedListener(new OnDateChangedListener() {
-
-				@Override
-				public void onDateChanged(String year, String month, String day) {
-					// TODO Auto-generated method stub
-					btnDateSelect.setText(year + "-" + month + "-" + day);
-				}
-			});
-
+			pwDate.showAtLocation(v, Gravity.BOTTOM, 0, 0,new Date());
 			break;
 
 		case R.id.btn_time_select:// 时间选择
-			WTimeSelector mTimeSelector = new WTimeSelector(this);
-			mTimeSelector.setTime();
-			mTimeSelector.setOnTimeChangedListener(new OnTimeChangedListener() {
-
-				@Override
-				public void onTimeChanged(String hour, String minute) {
-					// TODO Auto-generated method stub
-					btnTimeSelect.setText(hour + ":" + minute);
-				}
-			});
+			pwTime.showAtLocation(v, Gravity.BOTTOM, 0, 0,new Date());
 			break;
 
 		case R.id.btn_search_bar:// 搜索框
@@ -427,7 +430,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private void startProgressDialog() {
 		if (mWLoading == null) {
 //			type 可以选择WLoading.LARGE_TYPE / WLoading.SMALL_TYPE;
-			mWLoading = WLoading.createDialog(this,WLoading.LARGE_TYPE);
+			mWLoading = WLoading.createDialog(this,WLoading.SMALL_TYPE);
 			mWLoading.setMessage("加载中...");
 		}
 		mWLoading.show();
@@ -442,4 +445,22 @@ public class MainActivity extends Activity implements OnClickListener {
 			mWLoading = null;
 		}
 	}
+	
+	/**
+	 * @param date
+	 * @return
+	 */
+	public static String getTime(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        return format.format(date);
+    }
+	
+	/**
+	 * @param date
+	 * @return
+	 */
+	public static String getDate(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(date);
+    }
 }
