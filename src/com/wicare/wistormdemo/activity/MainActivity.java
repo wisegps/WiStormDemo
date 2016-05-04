@@ -23,10 +23,11 @@ import com.wicare.wistorm.ui.WDialog;
 import com.wicare.wistorm.ui.WDialog.Builder;
 import com.wicare.wistorm.ui.WDialog.DialogListOnclickListener;
 import com.wicare.wistorm.ui.WLoading;
-import com.wicare.wistorm.ui.pickerview.TimePopupWindow;
-import com.wicare.wistorm.ui.pickerview.TimePopupWindow.OnTimeSelectListener;
-import com.wicare.wistorm.ui.pickerview.TimePopupWindow.Type;
+import com.wicare.wistorm.ui.pickerview.WTimePopupWindow;
+import com.wicare.wistorm.ui.pickerview.WTimePopupWindow.OnTimeSelectListener;
+import com.wicare.wistorm.ui.pickerview.WTimePopupWindow.Type;
 import com.wicare.wistormdemo.R;
+import com.wicare.wistormdemo.activity.apitest.LoginAPITestActivity;
 
 /**
  * @author Administrator
@@ -64,6 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnCards;// 卡片管理
 	private Button btnProView;//圆形弧形进度UI
 	private Button btnListview;//上下拉刷新
+	private Button btnAPITest;//api实例
 	
 	
 
@@ -72,15 +74,15 @@ public class MainActivity extends Activity implements OnClickListener {
 	WBottomPopupWindow mPoppupWindow;
 	private WLoading mWLoading = null;
 	
-	TimePopupWindow pwTime;
-	TimePopupWindow pwDate;
+	WTimePopupWindow pwTime;
+	WTimePopupWindow pwDate;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		pwDate = new TimePopupWindow(MainActivity.this, Type.YEAR_MONTH_DAY);
+		pwDate = new WTimePopupWindow(MainActivity.this, Type.YEAR_MONTH_DAY);
 		pwDate.setOnTimeSelectListener(new OnTimeSelectListener() {
 			
 			@Override
@@ -90,7 +92,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			}
 		});
 		
-		pwTime = new TimePopupWindow(MainActivity.this, Type.HOURS_MINS);
+		pwTime = new WTimePopupWindow(MainActivity.this, Type.HOURS_MINS);
 		pwTime.setOnTimeSelectListener(new OnTimeSelectListener() {
 			
 			@Override
@@ -182,6 +184,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		btnListview = (Button) findViewById(R.id.btn_listview);
 		btnListview.setOnClickListener(this);
+		
+		
+		btnAPITest  = (Button) findViewById(R.id.btn_api_example);
+		btnAPITest.setOnClickListener(this);
 	}
 
 	@Override
@@ -279,12 +285,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			}, 6000);
 			break;
 
-//		case R.id.btn_listview_push_refresh:
-//			Intent intentListView = new Intent(MainActivity.this,
-//					ListViewTest.class);
-//			startActivity(intentListView);
-//			break;
-
 		case R.id.btn_Login:
 			Intent intentLogin = new Intent(MainActivity.this, LoginTest.class);
 			startActivity(intentLogin);
@@ -371,13 +371,13 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.btn_charts:
-			Intent intentChart = new Intent(MainActivity.this, ChartTest.class);
+			Intent intentChart = new Intent(MainActivity.this, ChartTestActivity.class);
 			startActivity(intentChart);
 			break;
 
 		case R.id.btn_about_app:
 			Intent intentAboutAPP = new Intent(MainActivity.this,
-					AboutApp.class);
+					AboutAppActivity.class);
 			startActivity(intentAboutAPP);
 			break;
 
@@ -405,6 +405,13 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivity(intent_listview);
 			break;
 
+			
+		case R.id.btn_api_example:
+			Intent intent_login_api = new Intent(MainActivity.this,
+					LoginAPITestActivity.class);
+			startActivity(intent_login_api);
+			break;
+			
 		default:
 			break;
 		}

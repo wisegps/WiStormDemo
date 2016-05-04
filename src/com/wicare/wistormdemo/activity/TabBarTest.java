@@ -29,7 +29,7 @@ public class TabBarTest extends Activity implements OnTabChangedListener{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.tabbar);
+		setContentView(R.layout.activity_tabbar);
 		WTabBar ll = (WTabBar) findViewById(R.id.tabbarLayout);
         ll.setOnTabChangedListener(this);
         ll.setTabText(itemNames); //设置 选项卡的标题

@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"  
+   	android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+    
+    
+    <Button 
+        android:id="@+id/btn_vehicle_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="createVehicle"
+        android:text="创建车辆信息" />
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical"> 
+	             
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_width="0dp"
+	                android:layout_weight="2"
+	                android:text="obj_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_obj_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车辆id" />
+	        </LinearLayout>   
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="cust_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_cust_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="用户id" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="cust_name:"/>
+	            <EditText 
+	                android:id="@+id/ed_cust_name"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="临时字段" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="obj_name:"/>
+	            <EditText 
+	                android:id="@+id/ed_obj_name"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车牌号" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="nick_name:"/>
+	            <EditText 
+	                android:id="@+id/ed_nick_name"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content" 
+	                android:hint="车辆名称"/>
+	        </LinearLayout> 
+	        
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="device_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_device_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content" 
+	                android:hint="终端id：0 表示没有绑定终端"
+	                android:text="0"/>
+	        </LinearLayout>        
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_brand_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_brand_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车辆品牌ID"
+	                android:text="3" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_brand:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_brand"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车辆品牌"
+	                android:text="宝马" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_series_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_series_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车型id"
+	                android:text="3995" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_series:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_series"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车型"
+	                android:text="宝马X6 M(进口)" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_type_id:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_type_id"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车款id"
+	                android:text="104461" />
+	        </LinearLayout> 
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="car_type:"/>
+	            <EditText 
+	                android:id="@+id/ed_car_type"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content" 
+	                android:hint="车款"
+	                android:text="2013 款 4.4L V8"/>
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="vio_city_name:"/>
+	            <EditText 
+	                android:id="@+id/ed_vio_city_name"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="违章城市名称" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="vio_location:"/>
+	            <EditText 
+	                android:id="@+id/ed_vio_location"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="违章城市代码" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="engine_no:"/>
+	            <EditText 
+	                android:id="@+id/ed_engine_no"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="发动机号" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="frame_no:"/>
+	            <EditText 
+	                android:id="@+id/ed_frame_no"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="车架号" />
+	        </LinearLayout>
+	        
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="reg_no:"/>
+	            <EditText 
+	                android:id="@+id/ed_reg_no"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="证书"
+	                android:hint="登记证书" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="last_query:"/>
+	            <EditText 
+	                android:id="@+id/ed_last_query"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="2016-05-03"
+	                android:hint="最后查询时间，用于控制用户查询周期，vip一天一次，免费用户七天一次" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="3"
+	                android:layout_width="0dp"
+	                android:text="insurance_company:"/>
+	            <EditText 
+	                android:id="@+id/ed_insurance_company"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="深圳保险"
+	                android:hint="保险公司" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="insurance_tel:"/>
+	            <EditText 
+	                android:id="@+id/ed_insurance_tel"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="0201-1111111"
+	                android:hint="保险公司电话" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="3"
+	                android:layout_width="0dp"
+	                android:text="insurance_date:"/>
+	            <EditText 
+	                android:id="@+id/ed_insurance_date"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="2016-05-03"
+	                android:hint="保险到期时间" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="insurance_no:"/>
+	            <EditText 
+	                android:id="@+id/ed_insurance_no"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="103132"
+	                android:hint="保险单号" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="annual_inspect_date:"/>
+	            <EditText 
+	                android:id="@+id/ed_annual_inspect_date"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="2016-05-03"
+	                android:hint="车辆年检日期" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="maintain_company:"/>
+	            <EditText 
+	                android:id="@+id/ed_maintain_company"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="深圳宝安"
+	                android:hint="保养4S店" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="maintain_tel:"/>
+	            <EditText 
+	                android:id="@+id/ed_maintain_tel"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="020-0000000"
+	                android:hint="保养4S店电话" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="3"
+	                android:layout_width="0dp"
+	                android:text="maintain_last_mileage:"/>
+	            <EditText 
+	                android:id="@+id/ed_maintain_last_mileage"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="15000"
+	                android:hint="最后保养里程" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="maintain_last_date:"/>
+	            <EditText 
+	                android:id="@+id/ed_maintain_last_date"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="2016-05-03"
+	                android:hint="最后保养时间" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="3"
+	                android:layout_width="0dp"
+	                android:text="maintain_next_mileage:"/>
+	            <EditText 
+	                android:id="@+id/ed_maintain_next_mileage"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="5000"
+	                android:hint="下次保养里程" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="mileage:"/>
+	            <EditText 
+	                android:id="@+id/ed_mileage"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="10000"
+	                android:hint="当前里程，需动态更新" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="gas_no:"/>
+	            <EditText 
+	                android:id="@+id/ed_gas_no"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="93"
+	                android:hint="汽油标号 0#, 90#, 93#(92#), 97#(95#)" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="fuel_ratio:"/>
+	            <EditText 
+	                android:id="@+id/ed_fuel_ratio"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:hint="油耗修正系数(直接原始数据*该系数得到实际油耗)" />
+	        </LinearLayout>
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="fuel_price:"/>
+	            <EditText 
+	                android:id="@+id/ed_fuel_price"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="5.8"
+	                android:hint="加油油价" />
+	        </LinearLayout>
+	        
+	        <LinearLayout 
+	            android:padding="10dp"
+	            android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+	            <TextView 
+	                android:layout_height="wrap_content"
+	                android:layout_weight="2"
+	                android:layout_width="0dp"
+	                android:text="buy_date:"/>
+	            <EditText 
+	                android:id="@+id/ed_buy_date"
+	                android:layout_weight="4"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:text="2016-05-03"
+	                android:hint="购车时间" />
+	        </LinearLayout>
+	  
+	    </LinearLayout>
+   </ScrollView>
+    
+
+</LinearLayout>

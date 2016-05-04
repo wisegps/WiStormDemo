@@ -22,7 +22,7 @@ public class CarSelectorActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.car_selector);
+		setContentView(R.layout.activity_car_selector);
 		carSelector = (Button) findViewById(R.id.btn_selector);
 		carMsg = (TextView) findViewById(R.id.tv_car_result);
 		carSelector.setOnClickListener(this);

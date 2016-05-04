@@ -30,7 +30,7 @@ public class ZxingActivityTest extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.wzxing_activity);
+		setContentView(R.layout.activitywzxing);
 		
 		resultZxing = (EditText) findViewById(R.id.scan_result) ;
 		scanZxing = (Button) findViewById(R.id.btn_scan);

@@ -34,7 +34,7 @@ public class ProgressViewActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.progress_view);
+		setContentView(R.layout.activity_progress_view);
 		//内环形也动态绘制进度
         arcView = (WArcProView)findViewById(R.id.v_arc);
 //        arcView.enableInsideScaleRing(true);
@@ -43,13 +43,13 @@ public class ProgressViewActivity extends Activity {
         circleView.enableInsideScaleRing(true);
       //只有外层圆环上的点转动
         circleViewPointRun = (WCircleProView)findViewById(R.id.v_circle_running);
-        circleViewPointRun.enableScaleRingPointRun(true);
+        circleViewPointRun.enableScaleRingPointRun(false);
         
         tvArcProgress = (TextView)findViewById(R.id.tv_arc);
         tvCircleProgress = (TextView)findViewById(R.id.tv_circle);
         tvCircleProgressRunning = (TextView)findViewById(R.id.tv_circle_running);
         
-        tvCircleProgressRunning.setText("STOP");
+        tvCircleProgressRunning.setText("GO");
         
         
         tvCircleProgressRunning.setOnClickListener(new OnClickListener() {

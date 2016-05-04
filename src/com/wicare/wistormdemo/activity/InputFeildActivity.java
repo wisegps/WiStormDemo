@@ -13,7 +13,7 @@ public class InputFeildActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.input_feild);
+		setContentView(R.layout.activity_input_feild);
 		inputFeild = (WInputField)findViewById(R.id.et_inputfeild);
 		
 	}

@@ -35,7 +35,7 @@ public class SwipeRefreshLayoutActivity extends Activity implements OnRefreshLis
 	@SuppressLint("ResourceAsColor") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.swiperefreshlayout_activity);
+		setContentView(R.layout.activity_swiperefreshlayout);
 		mList = (ListView)findViewById(R.id.lv);
 		initData();
 		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mData);

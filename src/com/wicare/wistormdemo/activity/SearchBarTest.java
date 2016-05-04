@@ -20,7 +20,7 @@ public class SearchBarTest extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.search_bar);
+		setContentView(R.layout.activity_search_bar);
 		
 		ivBack   = (ImageView) findViewById(R.id.iv_back);
 		ivBack .setOnClickListener(this);

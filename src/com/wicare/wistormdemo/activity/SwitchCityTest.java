@@ -20,7 +20,7 @@ public class SwitchCityTest extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.switch_city);
+        setContentView(R.layout.activity_switch_city);
         cityCall = (TextView) findViewById(R.id.city_callback);
         mSwitchCity = (Button) findViewById(R.id.btn_switch_city);
         mSwitchCity.setOnClickListener(this);

@@ -24,7 +24,7 @@ public class FragmentCard extends Fragment implements OnClickListener {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		if (view == null) {
-			view = inflater.inflate(R.layout.fragment_card, container,
+			view = inflater.inflate(R.layout.activity_fragment_card, container,
 					false);
 		} else {
 			ViewGroup parent = (ViewGroup) view.getParent();

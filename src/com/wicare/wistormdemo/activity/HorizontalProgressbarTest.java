@@ -22,7 +22,7 @@ public class HorizontalProgressbarTest extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.horizontal_progressbar);
+		setContentView(R.layout.activity_horizontal_progressbar);
 		
 		progressbar = (WHorizontalProgressBarWithNumber)findViewById(R.id.h_progressbar);
 		progressbar.setMax(100);//设置进度最大值

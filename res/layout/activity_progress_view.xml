@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.drawtest.MainActivity" >
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+    		<!-- 控制外层圆环点动 -->
+	        <RelativeLayout 
+	            android:layout_width="match_parent"
+	    		android:layout_height="wrap_content" >
+	    		
+	            <SeekBar 
+		            android:id="@+id/seek_bar"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginTop="10dp" />
+
+		        <RelativeLayout 
+		            android:id="@+id/rl_arc"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_marginTop="10dp"
+		            android:layout_below="@id/seek_bar" >
+		            
+		            <com.wicare.wistorm.ui.WArcProView
+				        android:id="@+id/v_arc"
+				        android:layout_width="150dp"
+				        android:layout_height="150dp"
+				        android:layout_centerInParent="true" />
+		    
+		    
+					<TextView 
+					    android:id="@+id/tv_arc"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_centerInParent="true"
+					    android:text="0"
+					    android:textStyle="bold"
+					    android:textColor="#32B9AA"
+					    android:textSize="40sp" />
+					
+		        </RelativeLayout>
+
+		        <!-- 控制内层圆环和外层圆环同时转动 -->
+		        <RelativeLayout 
+		            android:id="@+id/rl_circle"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_marginTop="10dp"
+		            android:layout_below="@id/rl_arc" >
+		            
+		            <com.wicare.wistorm.ui.WCircleProView
+				        android:id="@+id/v_circle"
+				        android:layout_width="150dp"
+				        android:layout_height="150dp"
+				        android:layout_centerInParent="true" />
+		    
+		    
+					<TextView 
+					    android:id="@+id/tv_circle"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_centerInParent="true"
+					    android:text="0"
+					    android:textStyle="bold"
+					    android:textColor="#32B9AA"
+					    android:textSize="40sp" />
+					
+		        </RelativeLayout>
+		        
+		        <!-- 外层圆环上的点持续转动 -->
+		        
+		        <RelativeLayout 
+		            android:id="@+id/rl_circle_running"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_centerHorizontal="true"
+		            android:layout_marginTop="10dp"
+		            android:layout_below="@id/rl_circle" >
+		            
+		            <com.wicare.wistorm.ui.WCircleProView
+				        android:id="@+id/v_circle_running"
+				        android:layout_width="150dp"
+				        android:layout_height="150dp"
+				        android:layout_centerInParent="true" />
+		    
+		    
+					<TextView 
+					    android:id="@+id/tv_circle_running"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_centerInParent="true"
+					    android:text="0"
+					    android:textStyle="bold"
+					    android:textColor="#32B9AA"
+					    android:textSize="30sp" />
+					
+		        </RelativeLayout>
+	            
+	        </RelativeLayout>
+	        
+       </ScrollView> 
+        
+
+</RelativeLayout>

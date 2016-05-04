@@ -14,4 +14,10 @@ public class SlidingMenuTest extends WSlidingMenu {
 		super.onCreate(savedInstanceState);	
 		
 	}
+
+	@Override
+	protected void setUpView() {
+		// TODO Auto-generated method stub
+		//可以在这里设置侧滑菜单的 左边侧滑栏和右边的内容栏。还可以设置侧滑菜单的属性
+	}
 }
