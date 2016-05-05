@@ -23,6 +23,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**   
+ * @ClassName:  VehicleCreateActivity   
+ * @Description:创建车辆信息  
+ * @author: Wu
+ * @date:   2016-5-5 上午10:18:23   
+ *      
+ */
 public class VehicleCreateActivity extends Activity{
 	
 	static final String TAG = "VehicleCreateActivity";

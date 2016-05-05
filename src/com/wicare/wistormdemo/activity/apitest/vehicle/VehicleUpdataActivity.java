@@ -20,6 +20,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+/**   
+ * @ClassName:  VehicleUpdataActivity   
+ * @Description:更新车辆信息  
+ * @author: Wu  
+ * @date:   2016-5-5 上午10:17:40   
+ *      
+ */
 public class VehicleUpdataActivity extends Activity {
 	
 	private EditText 	et_obj_id,     //车辆id 
@@ -211,6 +218,9 @@ public class VehicleUpdataActivity extends Activity {
 		params.put("vio_location", tv_vio_location);
 		params.put("engine_no", tv_engine_no);
 		params.put("frame_no", tv_frame_no);
+		
+//************************* 剩下的想改哪个字段就添加那个字段（创建车辆列表的所有字段（除了obj_id））来修改信息即可     **************************************/
+		
 		
 //		params.put("reg_no", tv_reg_no);
 //		params.put("last_query", tv_last_query);
