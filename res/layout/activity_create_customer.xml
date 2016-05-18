@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical">
+	    <Button 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="创建客户"
+	        android:onClick="createCustomer" />
+	    <LinearLayout 
+	         android:padding="10dp"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="2"
+	            android:text="mode:"/>
+	        <EditText 
+	            android:id="@+id/et_mode"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="2"
+	            android:hint="创建模式" />
+	    </LinearLayout>
+	    <LinearLayout 
+	         android:padding="10dp"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="2"
+	            android:text="seller_id:"/>
+	        <EditText 
+	            android:id="@+id/et_seller_id"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="商户ID" />
+	    </LinearLayout>
+	    <LinearLayout 
+	         android:padding="10dp"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="2"
+	            android:text="cust_type:"/>
+	        <EditText 
+	            android:id="@+id/et_cust_type"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="2"
+	            android:hint="用户类型" />
+	    </LinearLayout>
+	    <LinearLayout 
+	         android:padding="10dp"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="2"
+	            android:text="mobile:"/>
+	        <EditText 
+	            android:id="@+id/et_mobile"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="99999999"
+	            android:hint="手机号（必填）" />
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	         android:padding="10dp"
+	         android:layout_width="match_parent"
+		     android:layout_height="wrap_content"
+		     android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_width="0dp"
+	            android:layout_weight="2"
+	            android:text="obj_name:"/>
+	        <EditText 
+	            android:id="@+id/et_obj_name"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="粤:123456"
+	            android:hint="车牌号" />
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_brand_id:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_brand_id"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="车辆品牌ID"
+	            android:text="3" />
+	    </LinearLayout> 
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_brand:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_brand"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="车辆品牌"
+	            android:text="宝马" />
+	    </LinearLayout> 
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_series_id:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_series_id"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="车型id"
+	            android:text="3995" />
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_series:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_series"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="车型"
+	            android:text="宝马X6 M(进口)" />
+	    </LinearLayout> 
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_type_id:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_type_id"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:hint="车款id"
+	            android:text="104461" />
+	    </LinearLayout> 
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="car_type:"/>
+	        <EditText 
+	            android:id="@+id/ed_car_type"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="车款"
+	            android:text="2013 款 4.4L V8"/>
+	    </LinearLayout>    
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="frame_no:"/>
+	        <EditText 
+	            android:id="@+id/ed_frame_no"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="车架号"
+	            android:text="GTR00"/>
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="mileage:"/>
+	        <EditText 
+	            android:id="@+id/ed_mileage"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="当前里程"
+	            android:text="1000"/>
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="if_arrive:"/>
+	        <EditText 
+	            android:id="@+id/ed_if_arrive"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="是否到店"
+	            android:text="0"/>
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="business_type:"/>
+	        <EditText 
+	            android:id="@+id/ed_business_type"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="业务类型"
+	            android:text="1"/>
+	    </LinearLayout>
+	    <LinearLayout 
+	        android:padding="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        <TextView 
+	            android:layout_height="wrap_content"
+	            android:layout_weight="2"
+	            android:layout_width="0dp"
+	            android:text="business_content:"/>
+	        <EditText 
+	            android:id="@+id/ed_business_content"
+	            android:layout_weight="4"
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content" 
+	            android:hint="业务内容"
+	            android:text="业务内容Android测试"/>
+	    </LinearLayout>
+	</LinearLayout>    
+    
+</ScrollView>

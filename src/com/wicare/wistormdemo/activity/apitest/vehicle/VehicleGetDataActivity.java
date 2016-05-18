@@ -94,8 +94,13 @@ public class VehicleGetDataActivity extends Activity {
 			@Override
 			protected void onSuccess(String response) {
 				L.i("Vehicle", response);
-				tv_vehicle_data.setText(response);
-				T.showShort(VehicleGetDataActivity.this, "获取车辆信息成功！");
+				
+				if(!TextUtils.isEmpty(response)){
+					tv_vehicle_data.setText(response);
+					T.showShort(VehicleGetDataActivity.this, "获取车辆信息成功！");
+				}
+				
+				
 			}
 		}, new OnFailure() {
 			

@@ -1,6 +1,15 @@
 package com.wicare.wistormdemo.activity.apitest;
 
 import com.wicare.wistormdemo.R;
+import com.wicare.wistormdemo.activity.apitest.base.GetCarBrandActivity;
+import com.wicare.wistormdemo.activity.apitest.base.GetCarSeriesActivity;
+import com.wicare.wistormdemo.activity.apitest.base.GetCarTypeActivity;
+import com.wicare.wistormdemo.activity.apitest.user.BindCustomerActivity;
+import com.wicare.wistormdemo.activity.apitest.user.CreateCustomerActivity;
+import com.wicare.wistormdemo.activity.apitest.user.GetCustomerDataActivity;
+import com.wicare.wistormdemo.activity.apitest.user.GetCustomerListActivity;
+import com.wicare.wistormdemo.activity.apitest.user.GetTokeActivity;
+import com.wicare.wistormdemo.activity.apitest.user.UpdataCustomerActivity;
 import com.wicare.wistormdemo.activity.apitest.vehicle.VehicleCreateActivity;
 import com.wicare.wistormdemo.activity.apitest.vehicle.VehicleGetDataActivity;
 import com.wicare.wistormdemo.activity.apitest.vehicle.VehicleDeleteActivity;
@@ -51,27 +60,54 @@ public class ListApiMethodActivity extends Activity {
 			
 			switch (TYPE_API) {
 			case 0:
-				
+				if(position == 0){
+					Intent i_brand= new Intent(ListApiMethodActivity.this,GetCarBrandActivity.class);
+					startActivity(i_brand);
+				}else if(position == 1){
+					Intent i_series= new Intent(ListApiMethodActivity.this,GetCarSeriesActivity.class);
+					startActivity(i_series);
+				}else if(position == 2){
+					Intent i_type= new Intent(ListApiMethodActivity.this,GetCarTypeActivity.class);
+					startActivity(i_type);
+				}
 				break;
 			case 1:
-				
+				if(position == 0){
+					Intent i_token = new Intent(ListApiMethodActivity.this,GetTokeActivity.class);
+					startActivity(i_token);
+				}else if(position == 1){
+					Intent i_create = new Intent(ListApiMethodActivity.this,CreateCustomerActivity.class);
+					startActivity(i_create);
+				}else if(position == 2){
+					Intent i_bind = new Intent(ListApiMethodActivity.this,BindCustomerActivity.class);
+					startActivity(i_bind);
+				}else if(position == 3){
+					Intent i_updata = new Intent(ListApiMethodActivity.this,UpdataCustomerActivity.class);
+					startActivity(i_updata);
+				}else if(position == 4){
+					Intent i_get = new Intent(ListApiMethodActivity.this,GetCustomerDataActivity.class);
+					startActivity(i_get);
+				}else if(position == 5){
+					Intent i_get_list = new Intent(ListApiMethodActivity.this,GetCustomerListActivity.class);
+					startActivity(i_get_list);
+				}
 				break;
 			case 2:
 				if(position == 0){
 					Intent i_vehicle_create = new Intent(ListApiMethodActivity.this,VehicleCreateActivity.class);
 					startActivity(i_vehicle_create);
 				}else if(position == 1){
-					Intent i_vehicle_create = new Intent(ListApiMethodActivity.this,VehicleUpdataActivity.class);
-					startActivity(i_vehicle_create);
+					Intent i_vehicle_updata = new Intent(ListApiMethodActivity.this,VehicleUpdataActivity.class);
+					startActivity(i_vehicle_updata);
 				}else if(position == 2){
-					Intent i_vehicle_create = new Intent(ListApiMethodActivity.this,VehicleGetDataActivity.class);
-					startActivity(i_vehicle_create);
+					Intent i_vehicle_get = new Intent(ListApiMethodActivity.this,VehicleGetDataActivity.class);
+					startActivity(i_vehicle_get);
 				}else if(position == 3){
-					Intent i_vehicle_create = new Intent(ListApiMethodActivity.this,VehicleGetListActivity.class);
-					startActivity(i_vehicle_create);
+					Intent i_vehicle_list = new Intent(ListApiMethodActivity.this,VehicleGetListActivity.class);
+					startActivity(i_vehicle_list);
 				}else if(position == 4){
-					Intent i_vehicle_create = new Intent(ListApiMethodActivity.this,VehicleDeleteActivity.class);
-					startActivity(i_vehicle_create);
+					Intent i_vehicle_delete = new Intent(ListApiMethodActivity.this,VehicleDeleteActivity.class);
+					startActivity(i_vehicle_delete);
 				}
 				break;
 			case 3:
@@ -81,10 +117,7 @@ public class ListApiMethodActivity extends Activity {
 	
 				break;
 	
-			}
-			
-			Toast.makeText(ListApiMethodActivity.this, "id=" + id, Toast.LENGTH_SHORT).show();
-			
+			}	
 		}
 	};
 	
