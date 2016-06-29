@@ -17,11 +17,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.wicare.wistorm.ui.WAlertDialog;
+import com.wicare.wistorm.ui.WAlertDialog.Builder;
 import com.wicare.wistorm.ui.WBottomPopupWindow;
 import com.wicare.wistorm.ui.WBottomPopupWindow.OnItemClickListener;
-import com.wicare.wistorm.ui.WDialog;
-import com.wicare.wistorm.ui.WDialog.Builder;
-import com.wicare.wistorm.ui.WDialog.DialogListOnclickListener;
 import com.wicare.wistorm.ui.WLoading;
 import com.wicare.wistorm.ui.pickerview.WTimePopupWindow;
 import com.wicare.wistorm.ui.pickerview.WTimePopupWindow.OnTimeSelectListener;
@@ -52,7 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnDB;// 数据库操作
 	private Button btnShareSdk;// 分享
 	private Button btnZxing;// 二维码
-	private Button btn_sms;// 短信验证码
+//	private Button btn_sms;// 短信验证码
 	private Button btnInputfeild;// 输入框
 	private Button btnWCloud;// 阿里云
 	private Button btnWCache;// 图片缓存
@@ -145,8 +144,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		btnZxing = (Button) findViewById(R.id.btn_zxing);
 		btnZxing.setOnClickListener(this);
 
-		btn_sms = (Button) findViewById(R.id.btn_sms);
-		btn_sms.setOnClickListener(this);
 
 		btnInputfeild = (Button) findViewById(R.id.btn_inputfeild);
 		btnInputfeild.setOnClickListener(this);
@@ -239,12 +236,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.btn_alert_dialog:
-
-			WDialog.Builder builder = new Builder(MainActivity.this);
-			builder.setTitle("自定义菜单");
-			// builder.setMessage("00");
-			builder.setItems(itemsDialog);// 列表式菜单
-			builder.setPositiveButton("OK",
+			WAlertDialog.Builder builder = new Builder(MainActivity.this);
+			builder.setMessage("今天是星期三");
+			builder.setMessageColor(0xffdd4444);
+			builder.setButtonColor(0xffdd4444);
+			builder.setPositiveButton("确定",
 					new android.content.DialogInterface.OnClickListener() {
 
 						@Override
@@ -253,7 +249,7 @@ public class MainActivity extends Activity implements OnClickListener {
 							dialog.dismiss();
 						}
 					});
-			builder.setNegativeButton("Cancel",
+			builder.setNegativeButton("取消",
 					new android.content.DialogInterface.OnClickListener() {
 
 						@Override
@@ -262,16 +258,6 @@ public class MainActivity extends Activity implements OnClickListener {
 							dialog.dismiss();
 						}
 					});
-			builder.setOnClickListener(new DialogListOnclickListener() {
-				
-				@Override
-				public void onDialogListOnClick(WDialog dialog, int position) {
-					// TODO Auto-generated method stub
-					dialog.dismiss();
-					Toast.makeText(MainActivity.this, itemsDialog[position],
-							Toast.LENGTH_SHORT).show();
-				}
-			} );// 设置列表菜单点击事件监听
 			builder.create().show();
 			break;
 
@@ -331,10 +317,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent intentZxing = new Intent(MainActivity.this,
 					ZxingActivityTest.class);
 			startActivity(intentZxing);
-			break;
-		case R.id.btn_sms:
-			Intent intentSms = new Intent(MainActivity.this, WSMS.class);
-			startActivity(intentSms);
 			break;
 
 		case R.id.btn_inputfeild:

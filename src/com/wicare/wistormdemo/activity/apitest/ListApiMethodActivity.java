@@ -4,6 +4,10 @@ import com.wicare.wistormdemo.R;
 import com.wicare.wistormdemo.activity.apitest.base.GetCarBrandActivity;
 import com.wicare.wistormdemo.activity.apitest.base.GetCarSeriesActivity;
 import com.wicare.wistormdemo.activity.apitest.base.GetCarTypeActivity;
+import com.wicare.wistormdemo.activity.apitest.device.DeviceObdDataListActivity;
+import com.wicare.wistormdemo.activity.apitest.device.DeviceListActivity;
+import com.wicare.wistormdemo.activity.apitest.device.GetDeviceActivity;
+import com.wicare.wistormdemo.activity.apitest.device.UpdataDeviceActivity;
 import com.wicare.wistormdemo.activity.apitest.user.BindCustomerActivity;
 import com.wicare.wistormdemo.activity.apitest.user.CreateCustomerActivity;
 import com.wicare.wistormdemo.activity.apitest.user.GetCustomerDataActivity;
@@ -22,9 +26,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ListApiMethodActivity extends Activity {
@@ -33,7 +35,7 @@ public class ListApiMethodActivity extends Activity {
 	private String[] user_api_list     = {"获取token","创建客户信息","绑定客户","更新客户信息","获取客户信息","获取客户列表"};
 	private String[] vehicle_api_list  = {"创建车辆信息","更新车辆信息","获取车辆信息","获取车辆列表","删除车辆"};
 	private String[] business_api_list = {"创建业务信息","更新业务","更新业务离店状态","获取业务列表","获取业务统计"};
-	private String[] device_api_list   = {"获取设备列表","获取电压曲线及水温曲线","更新设备信息"};
+	private String[] device_api_list   = {"获取设备信息","获取设备列表","获取电压曲线及水温曲线","更新设备信息"};
 	
 	private int TYPE_API = 0;
 	private APIListAdapter adapter;
@@ -111,7 +113,19 @@ public class ListApiMethodActivity extends Activity {
 				}
 				break;
 			case 3:
-	
+				if(position == 0){
+					Intent i_get_device = new Intent(ListApiMethodActivity.this,GetDeviceActivity.class);
+					startActivity(i_get_device);
+				}else if(position == 1){
+					Intent i_list_device = new Intent(ListApiMethodActivity.this,DeviceListActivity.class);
+					startActivity(i_list_device);
+				}else if(position == 2){
+					Intent i_list_device = new Intent(ListApiMethodActivity.this,DeviceObdDataListActivity.class);
+					startActivity(i_list_device);
+				}else if(position == 3){
+					Intent i_updata_device = new Intent(ListApiMethodActivity.this,UpdataDeviceActivity.class);
+					startActivity(i_updata_device);
+				}
 				break;
 			case 4:
 	
@@ -133,10 +147,10 @@ public class ListApiMethodActivity extends Activity {
 			adapter = new APIListAdapter(ListApiMethodActivity.this, vehicle_api_list);
 		}else if(api_type.equals("设备终端")){
 			TYPE_API = 3;
-			adapter = new APIListAdapter(ListApiMethodActivity.this, business_api_list);
+			adapter = new APIListAdapter(ListApiMethodActivity.this, device_api_list);
 		}else if(api_type.equals("业务")){
 			TYPE_API = 4;
-			adapter = new APIListAdapter(ListApiMethodActivity.this, device_api_list);
+			adapter = new APIListAdapter(ListApiMethodActivity.this, business_api_list);
 		}
 	}
 	

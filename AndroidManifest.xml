@@ -308,7 +308,7 @@
         <!-- Api列表 -->
         <activity android:name="com.wicare.wistormdemo.activity.apitest.ListApiMethodActivity"
             android:label="Api列表方法"></activity>
-        
+        <!-- 车辆接口 -->
         <activity android:name="com.wicare.wistormdemo.activity.apitest.vehicle.VehicleCreateActivity"
             android:label="创建车辆信息"></activity>
         <activity android:name="com.wicare.wistormdemo.activity.apitest.vehicle.VehicleGetDataActivity"
@@ -320,7 +320,7 @@
         <activity android:name="com.wicare.wistormdemo.activity.apitest.vehicle.VehicleUpdataActivity"
             android:label="更新车辆信息"></activity>
         
-        
+        <!-- 用户接口 -->
         <activity android:name="com.wicare.wistormdemo.activity.apitest.user.GetTokeActivity"
             android:label="获取Token信息"></activity>
         <activity android:name="com.wicare.wistormdemo.activity.apitest.user.UpdataCustomerActivity"
@@ -333,6 +333,8 @@
             android:label="获取客户列表信息"></activity>
         <activity android:name="com.wicare.wistormdemo.activity.apitest.user.CreateCustomerActivity"
             android:label="创建客户信息"></activity>
+        
+        <!-- 基础接口 -->
         <activity android:name="com.wicare.wistormdemo.activity.apitest.base.GetCarBrandActivity"
             android:label="获取车品牌列表"></activity>
         <activity android:name="com.wicare.wistormdemo.activity.apitest.base.GetCarSeriesActivity"
@@ -340,6 +342,15 @@
         <activity android:name="com.wicare.wistormdemo.activity.apitest.base.GetCarTypeActivity"
             android:label="获取车款列表"></activity>
         
+        <!-- 设备接口 -->
+        <activity android:name="com.wicare.wistormdemo.activity.apitest.device.UpdataDeviceActivity"
+            android:label="更新设备"></activity>
+        <activity android:name="com.wicare.wistormdemo.activity.apitest.device.GetDeviceActivity"
+            android:label="获取设备信息"></activity>
+        <activity android:name="com.wicare.wistormdemo.activity.apitest.device.DeviceListActivity"
+            android:label="获取设备列表"></activity>
+        <activity android:name="com.wicare.wistormdemo.activity.apitest.device.DeviceObdDataListActivity"
+            android:label="获取设备数据列表"></activity>
         
         <!-- *********************jpush begin ********************* -->
         <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->

@@ -55,7 +55,7 @@ public class GetCarBrandActivity extends Activity {
 	public void getCarBrand(View view){
 		
 		HashMap<String, String> params = new HashMap<String, String>();		
-		params.put("access_token", app.access_token);
+//		params.put("access_token", app.access_token);
 		params.put("id", ">0");//>0获取所有的车辆品牌
 		params.put("page", "t_spell");
 		params.put("sorts", "t_spell");//按照首字母排列

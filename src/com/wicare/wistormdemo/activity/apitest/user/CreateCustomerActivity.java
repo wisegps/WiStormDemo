@@ -136,6 +136,7 @@ public class CreateCustomerActivity extends Activity{
 //				{"status_code":0,"cust_id":1454,"obj_id":3186}
 //				{"status_code":0,"cust_id":1455,"obj_id":3187}
 //				{"status_code":0,"cust_id":1456,"obj_id":3188}
+//				{"status_code":0,"cust_id":1502,"obj_id":3233}
 
 
 				try {

@@ -2,10 +2,6 @@ package com.wicare.wistormdemo.activity.apitest;
 
 import org.json.JSONObject;
 
-import cn.jpush.android.util.ab;
-
-import com.android.volley.Response;
-import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.wicare.wistorm.api.WUserApi;
 import com.wicare.wistorm.http.BaseVolley;
