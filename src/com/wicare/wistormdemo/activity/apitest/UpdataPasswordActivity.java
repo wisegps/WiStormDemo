@@ -15,6 +15,7 @@ import com.wicare.wistormdemo.utils.L;
 import com.wicare.wistormdemo.utils.T;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -45,13 +46,14 @@ public class UpdataPasswordActivity extends Activity {
 	public WUserApi userApi;
 	public WCommApi commApi;
 	
+	private Context mContext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_updata_password);
-		
+		mContext =  UpdataPasswordActivity.this;
 		tvBack = (TextView)findViewById(R.id.tv_back);
 		tvTitle = (TextView)findViewById(R.id.tv_title);
 		tvTitle.setText("重置密码");
@@ -74,8 +76,8 @@ public class UpdataPasswordActivity extends Activity {
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		userApi = new WUserApi();
-		commApi = new WCommApi();
+		userApi = new WUserApi(mContext);
+		commApi = new WCommApi(mContext);
 		BaseVolley.init(UpdataPasswordActivity.this);
 	}
 	

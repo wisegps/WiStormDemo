@@ -47,7 +47,7 @@ public class DeviceObdDataListActivity extends Activity {
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		deviceApi = new WDeviceApi();
+		deviceApi = new WDeviceApi(mContext);
 		BaseVolley.init(mContext);
 	}
 	

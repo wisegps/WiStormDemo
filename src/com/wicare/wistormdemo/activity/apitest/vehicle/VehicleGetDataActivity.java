@@ -13,6 +13,7 @@ import com.wicare.wistormdemo.utils.L;
 import com.wicare.wistormdemo.utils.T;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -34,11 +35,13 @@ public class VehicleGetDataActivity extends Activity {
 	public AppApplication application;
 	private String obj_id;
 	private String token;
+	private Context mContext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vehicle_get_data);
+		mContext = VehicleGetDataActivity.this;
 		et_obj_id = (EditText)findViewById(R.id.ed_obj_id);
 		tv_vehicle_data = (TextView)findViewById(R.id.tv_vehicle_data);
 		application = (AppApplication)getApplication();
@@ -50,7 +53,7 @@ public class VehicleGetDataActivity extends Activity {
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		vehicleApi = new WVehicleApi();
+		vehicleApi = new WVehicleApi(mContext);
 		BaseVolley.init(VehicleGetDataActivity.this);
 	}
 	

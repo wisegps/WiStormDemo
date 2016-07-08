@@ -13,6 +13,7 @@ import com.wicare.wistormdemo.utils.L;
 import com.wicare.wistormdemo.utils.T;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,13 +42,14 @@ public class LoginAPITestActivity extends Activity{
 	private SharedPreferences pref;
 	private SharedPreferences.Editor editor;
 	
-	
+	private Context mContext;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_login_api_test);
+		mContext = LoginAPITestActivity.this;
 		pref = getSharedPreferences("user", MODE_PRIVATE);
 		editor = getSharedPreferences("user", MODE_PRIVATE).edit();
 		account = pref.getString("account", "");
@@ -70,7 +72,7 @@ public class LoginAPITestActivity extends Activity{
 	 */
 	private void init(){
 		BaseVolley.init(LoginAPITestActivity.this);
-		userApi = new WUserApi();
+		userApi = new WUserApi(mContext);
 	}
 	
 	

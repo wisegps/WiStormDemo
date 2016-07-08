@@ -48,7 +48,7 @@ public class GetCarTypeActivity extends Activity{
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		baseApi = new WBaseApi();
+		baseApi = new WBaseApi(mContext);
 		BaseVolley.init(mContext);
 	}
 	

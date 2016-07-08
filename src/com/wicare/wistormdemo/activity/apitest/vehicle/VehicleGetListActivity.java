@@ -53,7 +53,7 @@ public class VehicleGetListActivity extends Activity {
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		vehicleApi = new WVehicleApi();
+		vehicleApi = new WVehicleApi(mContext);
 		BaseVolley.init(VehicleGetListActivity.this);
 	}
 	
@@ -80,7 +80,12 @@ public class VehicleGetListActivity extends Activity {
 		HashMap<String, String> params = new HashMap<String, String>();
 		
 		params.put("access_token", app.access_token);
-		params.put("seller_id", seller_id);//商户ID  
+//		params.put("seller_id", seller_id);//商户ID  
+		
+		params.put("cust_id", seller_id);//商户ID
+		
+		
+		
 		params.put("sorts", sorts);
 		params.put("limit", limit);
 		String fields = "nick_name,cust_name,obj_id,cust_id,obj_name,device_id,car_brand_id," +

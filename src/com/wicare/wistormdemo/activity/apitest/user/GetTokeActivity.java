@@ -48,7 +48,7 @@ public class GetTokeActivity extends Activity {
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		userApi = new WUserApi();
+		userApi = new WUserApi(mContext);
 		BaseVolley.init(mContext);
 	}
 	

@@ -462,7 +462,15 @@
             android:name="JPUSH_APPKEY"
             android:value="246cfe991619a148bf61fdf1" />
 
-        <!-- *********************jpush over********************* -->
+        <!--  WISTORM 后台申请的key 和 secret -->
+        <meta-data 
+            android:name="Wistorm_appSecret"
+            android:value="你的 app secret" />
+        
+        <meta-data 
+            android:name="Wistorm_appKey"
+            android:value="你的 app key" />
+       
     </application>
 
 </manifest>

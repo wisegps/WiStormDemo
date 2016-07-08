@@ -16,6 +16,7 @@ import com.wicare.wistormdemo.utils.L;
 import com.wicare.wistormdemo.utils.T;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -106,11 +107,14 @@ public class VehicleCreateActivity extends Activity{
 	private WVehicleApi vehicleApi;
 	public AppApplication application;
 	
+	private Context mContext;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vehicle_create);
 		application = (AppApplication)getApplication();
+		mContext = VehicleCreateActivity.this;
 		initView();
 		init();
 	}
@@ -119,7 +123,7 @@ public class VehicleCreateActivity extends Activity{
 	 * wistorm api接口网络请求初始化
 	 */
 	private void init(){
-		vehicleApi = new WVehicleApi();
+		vehicleApi = new WVehicleApi(mContext);
 		BaseVolley.init(VehicleCreateActivity.this);
 	}
 	
